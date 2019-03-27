@@ -1,6 +1,7 @@
 # Pull base image.
 #FROM ubuntu:14.04
-FROM rastasheep/ubuntu-sshd:14.04
+#FROM rastasheep/ubuntu-sshd:14.04
+FROM mysql:5.6
 
 # Create futuregateway user
 RUN adduser --disabled-password --gecos "" futuregateway
@@ -27,6 +28,6 @@ RUN apt-get -y update
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections 
 RUN apt-get -y install oracle-java8-installer
 
-EXPOSE 22
+#EXPOSE 22
 
-CMD ["/usr/sbin/sshd", "-D"]
+#CMD ["/usr/sbin/sshd", "-D"]
